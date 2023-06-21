@@ -37,7 +37,7 @@ const golfball= new THREE.Mesh(
       map: loader.load('./resources/images/golfballtexture.png'), side: THREE.DoubleSide
      })
     );
-golfball.position.y = 0.3;
+golfball.position.y = 7;
 scene.add(golfball);
 
 console.log(golfball.position)

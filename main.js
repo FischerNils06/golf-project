@@ -2,7 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import fall from "./physics.js";
-
+const loader = new THREE.TextureLoader();
 
 /**
  * Base
@@ -26,7 +26,9 @@ scene.add(golfball);
 //plane
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),
-    new THREE.MeshBasicMaterial({ color: 0x888888, side: THREE.DoubleSide })
+    new THREE.MeshBasicMaterial({ 
+      map: loader.load('./resources/images/wall.png'), side: THREE.DoubleSide 
+    })
     );
 plane.rotateX(Math.PI / 2);
 plane.position.y = -0.5;

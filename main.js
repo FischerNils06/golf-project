@@ -19,7 +19,9 @@ const scene = new THREE.Scene();
 // golfball
 const golfball= new THREE.Mesh(
     new THREE.SphereGeometry(0.3, 100, 100),
-    new THREE.MeshBasicMaterial({ color: 0xff3333 })
+    new THREE.MeshBasicMaterial({
+      map: loader.load('./resources/images/golfballtexture.png'), side: THREE.DoubleSide
+     })
     );
 scene.add(golfball);
 

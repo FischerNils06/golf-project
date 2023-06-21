@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import fall from "./physics.js";
 import { hitground } from "./physics.js";
+import userinput from "./userinput";
 const loader = new THREE.TextureLoader();
 
 /**
@@ -40,7 +41,6 @@ const golfball= new THREE.Mesh(
 golfball.position.y = 7;
 scene.add(golfball);
 
-console.log(golfball.position)
 //plane
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),
@@ -111,6 +111,8 @@ scene.add(camera);
 // Controls
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+ // userinput
+ userinput(golfball);
 
 /**
  * Renderer
@@ -143,6 +145,8 @@ const tick = () => {
 
   // hitground
   hitground(golfball,plane)
+
+ 
 };
 
 tick();

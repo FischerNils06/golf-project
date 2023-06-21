@@ -9,8 +9,6 @@ export default function fall(golfball, plane) {
 export function hitground(golfball, plane) {
     const roundedY = golfball.position.y.toFixed(40);
     if (roundedY <= plane.position.y + 0.3) {
-        console.log(roundedY)
-        console.log(plane.position.y)
         golfball.position.y = golfball.position.y + fallspeed;
 }
 }

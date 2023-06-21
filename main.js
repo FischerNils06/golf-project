@@ -13,6 +13,19 @@ const canvas = document.querySelector("canvas.webgl");
 // Scene
 const scene = new THREE.Scene();
 
+// GameState
+let gameState = {
+  player: {
+    position: {
+      x: 0,
+      y: 0,
+      z: 0,
+    },
+    rotation: {},
+  }
+
+}
+
 /**
  * Objects
  */
@@ -23,6 +36,7 @@ const golfball= new THREE.Mesh(
     );
 scene.add(golfball);
 
+console.log(golfball.position)
 //plane
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),

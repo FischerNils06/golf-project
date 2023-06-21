@@ -2,6 +2,7 @@ import "./style.css";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import fall from "./physics.js";
+import { hitground } from "./physics.js";
 const loader = new THREE.TextureLoader();
 
 /**
@@ -23,6 +24,7 @@ const golfball= new THREE.Mesh(
       map: loader.load('./resources/images/golfballtexture.png'), side: THREE.DoubleSide
      })
     );
+golfball.position.y = 0.3;
 scene.add(golfball);
 
 //plane
@@ -33,9 +35,8 @@ const plane = new THREE.Mesh(
     })
     );
 plane.rotateX(Math.PI / 2);
-plane.position.y = -0.5;
+plane.position.y = -0.3;
 scene.add(plane);
-
 
 
 
@@ -124,7 +125,10 @@ const tick = () => {
   window.requestAnimationFrame(tick);
 
   // falldown golfball
-  fall(golfball)
+  fall(golfball,plane)
+
+  // hitground
+  hitground(golfball,plane)
 };
 
 tick();

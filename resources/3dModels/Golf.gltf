@@ -25,7 +25,7 @@
                 0.1539539098739624
             ],
             "translation" : [
-                0,
+                -5.901278018951416,
                 -0.7704645395278931,
                 -0.009786929935216904
             ]
@@ -45,7 +45,7 @@
                 1.1305732727050781
             ],
             "translation" : [
-                0,
+                -5.901278018951416,
                 4.68607234954834,
                 -0.5616947412490845
             ]
@@ -54,7 +54,7 @@
             "mesh" : 2,
             "name" : "Cube.001",
             "translation" : [
-                0,
+                -5.901278018951416,
                 -1.1783249378204346,
                 0
             ]
@@ -68,7 +68,7 @@
                 1.414494276046753
             ],
             "translation" : [
-                0,
+                -5.901278018951416,
                 -1.3247957229614258,
                 0
             ]
@@ -256,7 +256,7 @@
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 18,
+            "count" : 30,
             "max" : [
                 0.8660253882408142,
                 1,
@@ -272,19 +272,19 @@
         {
             "bufferView" : 5,
             "componentType" : 5126,
-            "count" : 18,
+            "count" : 30,
             "type" : "VEC3"
         },
         {
             "bufferView" : 6,
             "componentType" : 5126,
-            "count" : 18,
+            "count" : 30,
             "type" : "VEC2"
         },
         {
             "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 24,
+            "count" : 48,
             "type" : "SCALAR"
         },
         {
@@ -383,74 +383,74 @@
         },
         {
             "buffer" : 0,
-            "byteLength" : 216,
+            "byteLength" : 360,
             "byteOffset" : 840,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 216,
-            "byteOffset" : 1056,
+            "byteLength" : 360,
+            "byteOffset" : 1200,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 144,
-            "byteOffset" : 1272,
+            "byteLength" : 240,
+            "byteOffset" : 1560,
             "target" : 34962
         },
         {
             "buffer" : 0,
-            "byteLength" : 48,
-            "byteOffset" : 1416,
+            "byteLength" : 96,
+            "byteOffset" : 1800,
             "target" : 34963
         },
         {
             "buffer" : 0,
             "byteLength" : 1416,
-            "byteOffset" : 1464,
+            "byteOffset" : 1896,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 1416,
-            "byteOffset" : 2880,
+            "byteOffset" : 3312,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 944,
-            "byteOffset" : 4296,
+            "byteOffset" : 4728,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 432,
-            "byteOffset" : 5240,
+            "byteOffset" : 5672,
             "target" : 34963
         },
         {
             "buffer" : 0,
             "byteLength" : 624,
-            "byteOffset" : 5672,
+            "byteOffset" : 6104,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 624,
-            "byteOffset" : 6296,
+            "byteOffset" : 6728,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 416,
-            "byteOffset" : 6920,
+            "byteOffset" : 7352,
             "target" : 34962
         },
         {
             "buffer" : 0,
             "byteLength" : 168,
-            "byteOffset" : 7336,
+            "byteOffset" : 7768,
             "target" : 34963
         }
     ],
@@ -462,7 +462,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 7504,
+            "byteLength" : 7936,
             "uri" : "Golf.bin"
         }
     ]

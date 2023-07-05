@@ -133,7 +133,6 @@ const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
  // userinput
  userinput(golfball, camera);
-
 /**
  * Renderer
  */

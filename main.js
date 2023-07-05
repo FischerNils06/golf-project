@@ -5,6 +5,7 @@ import fall from "./physics.js";
 import { hitground } from "./physics.js";
 import userinput from "./userinput";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { TWEEN } from 'https://unpkg.com/three@0.139.0/examples/jsm/libs/tween.module.min.js';
 const loader = new THREE.TextureLoader();
  
 
@@ -174,6 +175,7 @@ const tick = () => {
   // hitground
   hitground(golfball,plane)
 
+  TWEEN.update();
 };
 
 tick();

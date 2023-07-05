@@ -5,7 +5,7 @@ export default function userinput(object, camera) {
 document.addEventListener("keydown", (event) => {
     if (event.key === " ") {
         const distance = 3
-        const duration = 10
+        const duration = 1000
         console.log('a')
         // golfball.position.y = golfball.position.y + 1
         

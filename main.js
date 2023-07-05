@@ -44,14 +44,17 @@ plane.position.y = -0.3;
 scene.add(plane);
 
 // stage
+let stage;
 const loader2 = new GLTFLoader();
 loader2.load(
 	// resource URL
 	'resources/3dModels/Golf.gltf',
 	// called when the resource is loaded
 	function ( gltf ) {
-
+    stage = gltf.scene;
 		scene.add( gltf.scene );
+    
+    userinput(gltf.scene, camera);
 
 		gltf.animations; // Array<THREE.AnimationClip>
 		gltf.scene; // THREE.Group
@@ -132,7 +135,6 @@ scene.add(camera);
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
  // userinput
- userinput(golfball, camera);
 /**
  * Renderer
  */

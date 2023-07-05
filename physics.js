@@ -20,6 +20,7 @@ export function move(object, camera, distance, duration) {
     camera.getWorldDirection(direction);
     direction.y = 0;
     direction.normalize();
+    direction.negate();
   
     // Calculate the target position
     const targetPosition = object.position.clone().add(direction.multiplyScalar(distance));

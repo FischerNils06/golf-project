@@ -4,9 +4,11 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import fall from "./physics.js";
 import { hitground } from "./physics.js";
 import userinput from "./userinput";
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 const loader = new THREE.TextureLoader();
+ 
 
-/**
+/**   
  * Base
  */
 // Canvas
@@ -15,25 +17,13 @@ const canvas = document.querySelector("canvas.webgl");
 // Scene
 const scene = new THREE.Scene();
 
-// GameState
-let gameState = {
-  player: {
-    position: {
-      x: 0,
-      y: 0,
-      z: 0,
-    },
-    rotation: {},
-  }
-
-}
 
 /**
  * Objects
  */
 // golfball
 const golfball= new THREE.Mesh(
-    new THREE.SphereGeometry(0.3, 100, 100),
+    new THREE.SphereGeometry(0.22, 100, 100),
     new THREE.MeshBasicMaterial({
       map: loader.load('./resources/images/golfballtexture.png'), side: THREE.DoubleSide
      })
@@ -44,16 +34,45 @@ scene.add(golfball);
 //plane
 const plane = new THREE.Mesh(
     new THREE.PlaneGeometry(5, 5),
-    new THREE.MeshBasicMaterial({ 
-      map: loader.load('./resources/images/wall.png'), side: THREE.DoubleSide 
-    })
+    // new THREE.MeshBasicMaterial({ 
+    //   map: loader.load('./resources/images/wall.png'), side: THREE.DoubleSide 
+    // })
     );
 plane.rotateX(Math.PI / 2);
 plane.position.y = -0.3;
 scene.add(plane);
 
+// stage
+const loader2 = new GLTFLoader();
+loader2.load(
+	// resource URL
+	'resources/3dModels/Golf.gltf',
+	// called when the resource is loaded
+	function ( gltf ) {
 
+		scene.add( gltf.scene );
 
+		gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Group
+		gltf.scenes; // Array<THREE.Group>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
+
+	},
+	// called while loading is progressing
+	function ( xhr ) {
+
+		console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+	},
+	// called when loading has errors
+	function ( error ) {
+
+		console.log( 'An error happened' );
+
+	}
+);
+// loader.addEventListener("load", function (object) {scene.add(object)}, false); loader.load ("items/m16/m16.obj", "items/m16/m16.mtl");
 /**
  * Sizes
  */
@@ -112,7 +131,7 @@ scene.add(camera);
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
  // userinput
- userinput(golfball);
+ userinput(golfball, camera);
 
 /**
  * Renderer
@@ -122,6 +141,15 @@ const renderer = new THREE.WebGLRenderer({
 });
 renderer.setSize(sizes.width, sizes.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+/**
+ * Light
+ */
+const color = 0xFFFFFF;
+const intensity = 1;
+const light = new THREE.AmbientLight(color, intensity);
+scene.add(light);
+
 
 /**
  * Animate
@@ -146,7 +174,6 @@ const tick = () => {
   // hitground
   hitground(golfball,plane)
 
- 
 };
 
 tick();
